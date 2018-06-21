@@ -1,0 +1,147 @@
+.all{
+    margin: 0 auto;
+    width:83%;
+    height:900px;
+    margin-top: 15px;
+    margin-bottom:100px;
+}
+.all .left{
+    float: left;
+    width:15%;
+    height:97.5%;
+    background-color: rgb(235, 218, 218);
+}
+.all .right{
+    float: left;
+    width:85%;
+    height:100%;
+}
+.all .left a{
+    font-size: 18px;
+    display: block;
+width:100%;
+height: 50px;
+line-height: 50px;
+text-align: center;
+border-bottom: solid 1px rgb(250, 249, 249);
+}
+.all .left a:hover{
+    background-color: rgb(210, 248, 235);
+    color: crimson;
+}
+table{
+    margin-left: 15px;
+    border:solid 1px #E4E4E4;
+}
+tr{
+    background-color: #f8f4f4;
+    height:120px;
+}
+tr:hover{
+    background-color: #f7e5e5;
+}
+tr:first-child:hover{
+    background-color: #F2F2F2;
+}
+tr:first-child{
+    height:45px;
+}
+
+/* 右边部分 */
+.xing img{
+    margin-left: -5px;
+}
+.atr{
+    background-color:#F2F2F2
+}
+.atr>th:first-child{
+    text-indent: 12px; text-align: left;font-weight: bold;font-size: 18px;
+}
+.atr>th:last-child{
+    display: block;
+    margin-top: 5px;
+    margin-left: 270px;
+     width:100px;
+     height:35px;
+     line-height: 35px;
+     text-align: center;
+     border-radius: 6px;
+     color: white; 
+     background-color: #00C4C4;
+}
+.btr .atd{
+    width:12%;overflow: hidden;
+}
+.btr .atd img{
+    width:130px;height:130px;margin:15px;
+}
+.btr .btd{
+    width:45%;
+}
+.btr .btd .ap{
+    margin-top: -5px;
+}
+.btr .btd .ap a{
+    font-size: 18px;font-weight: 545;
+}
+.btr .btd .bp{
+    margin-top: 10px;
+}
+.btr .btd .bp span{
+    font-size: 14px;
+}
+.btr .btd .cp,.btr .btd .dp{
+    margin-top: 10px;
+}
+.btr .ctd a{
+    display: block;
+    margin-top: 90px;
+    margin-right: 10px;
+     width:100px;
+     height:35px;
+     line-height: 35px;
+     text-align: center;
+     border-radius: 6px;
+     color: white;
+      background-color: #999999;
+}
+.btr .ctd a:hover{
+    background-color: #00C4C4;
+}
+.btr .dtd{
+    width:35%;height:120px;overflow: hidden;
+}
+.btr .dtd dl{
+    margin-left:10px;margin-top:-10px;width:100%;height:120px;overflow: hidden;
+}
+.btr .dtd dt{
+    font-weight: 650;line-height: 25px;
+}
+.btr .dtd dd{
+    width:95%;
+}
+/* 右边部分 */
+
+
+.page a{
+    display: block;
+    float: left;
+    width:25px;
+    border: solid 1px #CCDBE4;
+    color: black;
+    margin-left: 10px;
+    text-align: center;
+}
+.page a:first-child,.page a:last-child{
+    width:60px;
+}
+.page a:hover{
+    background-color: rgb(128, 128, 175);
+    color: white;
+}
+.page{
+    display: block;
+    width:54%;
+    margin:0 auto;
+    margin-top: 30px;
+}

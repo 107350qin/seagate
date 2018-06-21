@@ -1,0 +1,350 @@
+#twoa{
+    width:1300px;
+    height:790px;
+    margin: 0 auto;
+}
+#centera{
+    width: 1068px;
+    height: 580px;
+    margin-left: 104px;
+    margin-top: 37px;
+    border: 1px solid #AEAEAE;
+}
+
+#center1a{
+    width: 637px;
+    height: 56px;
+    border-bottom: 1px solid #F2F2F2;
+}
+
+#text3a{
+    width: 263px;
+    height: 56px;
+    margin-left: 13px;
+
+}
+
+#usera{
+    width: 100px;
+    height: 56px;
+    color: #333333;
+    font-weight: 600;
+    line-height: 56px;
+}
+#coma{
+    width: 100px;
+    height: 56px;
+    color: #333333;
+    line-height: 56px;
+    margin-left: 58px;
+}
+#text3a>div{
+    float: left;
+}
+#phonea{
+    width: 326px;
+    height: 39px;
+    margin-left: 30px;
+    margin-top: 21px;
+}
+#phonea>div{
+    float: left;
+}
+#phonenumbera{
+    width: 53px;
+    height: 39px;
+    color: #333333;
+    font-size: 13px;
+    line-height: 39px;
+}
+#boxa{
+    width: 255px;
+    height: 39px;
+    margin-left: 12px;
+}
+
+#phone1a{
+    width: 227px;
+    height: 34px;
+    outline:medium;
+}
+
+#emaila{
+    width: 450px;
+    height: 39px;
+    margin-top: 23px;
+    margin-left: 54px;
+}
+
+#text4a{
+    width: 28px;
+    height: 39px;
+    color: #333333;
+    line-height: 39px;
+    font-size: 13px;
+
+}
+#box2a{
+    width: 400px;
+    height: 39px;
+    margin-left: 10px;
+
+}
+#emaila>div{
+    float: left;
+}
+#email1a{
+    width: 229px;
+    height: 34px;
+    outline:medium;
+
+}
+
+#usernamea{
+    width: 272px;
+    height: 39px;
+    margin-top: 22px;
+    margin-left: 54px;
+
+}
+#text5a{
+    width: 28px;
+    height: 39px;
+    color: #333333;
+    line-height: 39px;
+    font-size: 13px;
+}
+#box3a{
+    width: 234px;
+    height: 39px;
+    margin-left: 10px;
+
+}
+#usernamea>div{
+    float: left;
+}
+#namea{
+    width: 229px;
+    height: 34px;
+    outline:medium;
+
+}
+
+#comnamea{
+    width: 418px;
+    height: 39px;
+    margin-top: 22px;
+    margin-left: 30px;
+
+}
+
+#comname1a{
+    width: 53px;
+    height: 39px;
+    color: #333333;
+    font-size: 13px;
+    line-height: 39px;
+}
+
+#box6a{
+    width: 345px;
+    height: 39px;
+    margin-left: 8px;
+
+}
+#comnamea>div{
+    float: left;
+}
+#comname2a{
+    width: 229px;
+    height: 34px;
+    outline:medium;
+}
+#worka{
+    width: 272px;
+    height: 39px;
+    margin-top: 22px;
+    margin-left: 54px;
+
+}
+#work1a{
+    width: 28px;
+    height: 39px;
+    color: #333333;
+    line-height: 39px;
+    font-size: 13px;
+}
+#box7a{
+    width: 234px;
+    height: 39px;
+    margin-left: 10px;
+
+}
+#worka>div{
+    float: left;
+}
+#work2a{
+    width: 229px;
+    height: 34px;
+    outline:medium;
+
+}
+
+#citya{
+    width: 305px;
+    height: 39px;
+    margin-top: 22px;
+    margin-left: 30px;
+
+}
+#city1a{
+    width: 53px;
+    height: 39px;
+    color: #333333;
+    font-size: 13px;
+    line-height: 39px;
+}
+#box8a{
+    width: 239px;
+    height: 39px;
+    margin-left: 8px;
+
+}
+#citya>div{
+    float: left;
+}
+#downa{
+    width: 105px;
+    height: 39px;
+
+}
+
+.box9a{
+    width: 105px;
+    height: 38px;
+    outline:none
+
+}
+#down1a{
+    width: 105px;
+    height: 39px;
+    margin-left: 23px;
+
+}
+
+.box10a{
+    width: 105px;
+    height: 38px;
+    outline:none
+
+}
+#box8a>div{
+    float: left;
+}
+
+#yzma{
+    width: 285px;
+    height: 39px;
+    margin-left: 41px;
+    margin-top: 22px;
+
+}
+#yzm1a{
+    width: 40px;
+    height: 39px;
+    font-size: 13px;
+    color: #333333;
+    line-height: 39px;
+
+}
+#box11a{
+    width: 136px;
+    height: 39px;
+    margin-left: 8px;
+
+}
+
+#yzma>div{
+    float: left;
+}
+
+#yzm2a{
+    width: 135px;
+    height: 34px;
+    outline:medium;
+}
+
+#box12a{
+    width: 84px;
+    height: 39px;
+    margin-left: 10px;
+}
+
+#submita{
+    width: 232px;
+    height: 47px;
+    margin-top: 25px;
+    margin-left: 91px;
+}
+
+.submita{
+    width: 232px;
+    height: 47px;
+    background-color: #099998;
+    color: white;
+    font-size: 17px;
+    outline:medium;
+    border-radius: 10px;
+}
+#righta{
+    width: 350px;
+    height: 203px;
+    position:absolute;
+    left: 956px;
+    top: 200px;
+}
+#text9a{
+    width: 80px;
+    height: 20px;
+    color: #333333;
+    margin-top: 14px;
+    margin-left: 10px;
+    font-size: 13px;
+    font-weight: 600;
+
+}
+#text10a{
+    width: 326px;
+    height: 48px;
+    color: #333333;
+    margin-top: 23px;
+    margin-left: 10px;
+    font-size: 13px;
+
+}
+#text11a{
+    width: 230px;
+    height: 15px;
+    color: #333333;
+    margin-top: 21px;
+    margin-left: 10px;
+    font-size: 13px;
+
+}
+#text12a{
+    width: 230px;
+    height: 15px;
+    color: #333333;
+    margin-top: 21px;
+    margin-left: 10px;
+    font-size: 13px;
+
+}
+#text13a{
+    width: 160px;
+    height: 15px;
+    color: #333333;
+    margin-top: 2px;
+    margin-left: 10px;
+    font-size: 13px;
+}

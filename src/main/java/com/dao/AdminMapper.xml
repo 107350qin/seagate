@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.IAdminDao">
+	<select id="selectAdmin" resultType="Admin">
+		select id,username,password from admin where username=#{username} and
+		password=md5(#{password});
+	</select>
+
+	<insert id="insertEvent">
+		insert
+		event(event_id,event_title,event_content,event_time,event_browCount,event_boo,event_desc,event_pic)
+		values(0,#{event_title},#{event_content},#{event_time},0,#{event_boo},#{event_desc},#{event_pic});
+	</insert>
+
+	<select id="selectEventCount" parameterType="int" resultType="int"> 
+		select count(*) from event where event_boo=#{flag}; </select>
+	<select id="selectEvent" resultType="Event"> select * from event where 
+		event_boo=#{0} limit #{1},#{2}; </select>
+		
+	<select id="selectEventCountA" parameterType="String" resultType="int"> 
+		select count(*) from event where event_title like "%"#{0}"%"; 
+	</select>
+	<select id="selectEventA" resultType="Event">
+		 select * from event where event_title like "%"#{2}"%" limit #{0},#{1};
+	 </select>
+
+
+	<delete id="deleteEvent">
+		delete from event where event_id=#{event_id};
+	</delete>
+
+	<select id="selectEventById" resultType="Event">
+		select * from event where event_id=#{0};
+	</select>
+
+	<update id="changeEventById">
+		update event set
+		event_title=#{event_title},event_content=#{event_content},event_desc=#{event_desc},event_pic=#{event_pic}
+		where event_id=#{event_id};
+	</update>
+
+	<update id="updatePicOfEvent">
+		update event set event_pic=#{event_pic} where event_id=#{event_id};
+	</update>
+	
+	<!-- 管理员查询审核的课程 -->
+	<select id="pickCourses" resultMap="theCourse">
+		select * from course where
+		<if test="isPass!=-1">
+		  c_boo=#{isPass} and
+		</if>
+		<if test="rank!=0 and rank!=4">
+		  c_class=#{rank} and
+		</if>
+		1=1 
+		<if test="rank!=4">
+			order by c_time desc 
+		</if>
+		limit #{begin},#{end}
+	</select>
+	<resultMap type="Course" id="theCourse">
+		<id column="c_id" property="c_id"/>
+		<association  property="com" javaType="Com" select="selectComByCid" column="c_id"></association>
+		<collection property="chapterList" ofType="Chapter" column="c_id"  select="pickChapterByCid"/>
+	</resultMap>
+	<select id="selectComByCid" resultType="Com">
+		select com.* from com left join course on com.com_id=course.com_id where course.c_id=#{c_id};
+	</select>
+	<select id="pickChapterByCid" resultMap="theChapter">
+		select chapter.* from chapter left join course on chapter.c_id=course.c_id where course.c_id=#{c_id};
+	</select>
+	<resultMap type="Chapter" id="theChapter">
+		<id column="ch_id" property="ch_id"/>
+		<collection property="list" ofType="Section" column="ch_id"  select="pickSectionByChid"/>
+	</resultMap>
+	<select id="pickSectionByChid" resultType="Section">
+		select section.* from section left join chapter on chapter.ch_id=section.ch_id where chapter.ch_id=#{ch_id};
+	</select>
+	
+	<!-- 审核 -->
+	<update id="pass">
+		update course set c_boo=#{1} where c_id=#{0}
+	</update>
+	<!-- 查询课程数量-->
+	<select id="pickCourseCount" resultType="int">
+		select count(*) from course where
+		<if test="isPass!=-1">
+			 c_boo=#{isPass} and
+		</if>
+		<if test="rank!=0">
+			 c_class=#{rank} and
+		</if> 
+		1=1
+	</select>
+	
+	
+	<!-- 查询课程 -->
+	<select id="pickCourseById" resultMap="myCourse">
+		select * from course where c_id=#{0}
+	</select>
+	<resultMap type="Course" id="myCourse">
+		<id column="c_id" property="c_id"/>
+		<association property="com" javaType="Com" select="selectComByCid" column="c_id"></association>
+		<collection property="chapterList" ofType="Chapter" column="c_id"  select="pickChapterByCid"/>
+	</resultMap>
+	
+	<!-- 查询搜索课程有几条 -->
+	<select id="selectCourseCount" resultType="int">
+		select count(*) from course where c_name like "%"#{0}"%"
+	</select>
+	<select id="selectCourses" resultMap="theCourse">
+		select * from course where c_name like "%"#{2}"%" limit #{0},#{1}
+	</select>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

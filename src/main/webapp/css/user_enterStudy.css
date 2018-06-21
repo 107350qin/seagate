@@ -1,0 +1,259 @@
+/* 上面部分开始 */
+.enter{
+    border:solid 1px #CCCCCC;
+    padding:30px;
+    width:79%;
+    margin:0 auto;
+    height: 1800px;
+}
+.shang>img{
+    margin-bottom: 30px;
+    float: left;
+width:50%;
+height: 350px;
+}
+.shang .rig{
+    float: right;
+    width:42.5%;
+    height: 260px;
+    border:solid 1px #CCCCCC;
+    padding:45px;
+}
+.shang .rig p:first-child{
+    font-size: 25px;
+    font-weight: bold;
+}
+.shang .rig p:first-child{
+    font-size: 25px;
+    font-weight: bold;
+}
+.marginT{
+    margin-top:15px;
+}
+.start{
+    margin-top:40px;
+}
+.start a{
+    display: block;
+    width:180px;
+    height:50px;
+    text-align: center;
+    line-height: 50px;
+    background-color: #FF6600;
+    font-size: 20px;
+    color:white;
+    border-radius: 10px;
+}
+.start a:hover{
+    background-color: rgb(248, 4, 146);
+}
+/* 上面部分结束 */
+
+/* 下面左边部分开始 */
+.xiaLeft{
+    width:70%;
+   float: left;
+}
+.xiaLeft .one{
+    width:100%;
+    border:solid 1px #BCBCBC;
+}
+.xiaLeft .one div{
+    padding:10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.xiaLeft .one div:first-child{
+    border-bottom: solid 1px #BCBCBC;
+}
+.xiaLeft .one div p{
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+
+.xiaLeft .two{
+    margin-top: 30px;
+    width:100%;
+    border:solid 1px #BCBCBC;
+}
+.xiaLeft .two div:first-child{
+    border-bottom: solid 1px #BCBCBC;
+    padding:10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.xiaLeft .two div a{
+    padding:10px;
+    line-height: 30px;
+    height:30px;
+    display: block;
+}
+.xiaLeft .two div a span:hover{
+    color: rgb(33, 194, 41);
+}
+.section:hover{
+    background-color: rgb(255, 175, 175);
+}
+.xiaLeft .two div a span:first-child{
+    color:#999999;
+    margin-right: 80px;
+}
+.xiaLeft .two div a span:nth-child(3){
+    float: right;
+    color:#999999;
+}
+.xiaLeft .two div a span:nth-child(4){
+    float: right;
+}
+.xiaLeft .two img{
+    margin-right: 15px;
+    vertical-align: -2px;
+}
+
+
+
+
+.xiaLeft .three{
+    margin-top: 30px;
+    width:100%;
+    border:solid 1px #BCBCBC;
+}
+.xiaLeft .three div:first-child{
+    border-bottom: solid 1px #BCBCBC;
+    padding:10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.divB{
+    padding:20px;
+    height:130px;
+    border-bottom: solid 1px #BCBCBC;
+}
+.divB a img{
+    float: left;
+width:130px;
+height: 130px;
+}
+.thrRight{
+    float: left;
+    margin-left: 40px;
+}
+.thrRight .ap a{
+    font-size: 18px;
+font-weight: 560;
+color: #666666;
+
+display: block;
+}
+.thrRight p{
+    margin-bottom: 10px;
+}
+.thrRight .bp span:nth-child(2),.thrRight .bp span:nth-child(3){
+    margin-left: 30px;
+}
+/* 下面左边部分结束 */
+
+
+
+/* 下面右边部分开始 */
+.xiaRight{
+    margin-left: 30px;
+    float: left;
+    width:27%;
+    height:800px;
+}
+.xiaRight .tt{
+    border:solid 1px  #BCBCBC;
+}
+.border{
+    padding: 15px;
+    border-bottom:solid 1px  #BCBCBC;
+}
+.border:first-child{
+    border-bottom: solid 1px #BCBCBC;
+    padding:10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.border:first-child a{
+   display: block;
+   width:100px;
+   height: 30px;
+   font-size: 16px;
+   color: white;
+   text-align: center;
+   line-height: 30px;
+   background-color: #099998;
+   border-radius: 6px;
+   float: right;
+}
+.border>img{
+    width:65px;
+    height: 65px;
+    float: left;
+    margin-right: 20px;
+}
+
+.border div p{
+    margin-top: 5px;
+}
+.border div p span:last-child{
+    color: #999999;
+    margin-left: 20px;
+}
+.border div p:last-child{
+   line-height: 20px;
+}
+
+.tt>a{
+    display: block;
+    width:100%;
+    height:50px;
+    background-color: #E4E4E4;
+    font-size: 18px;
+    text-align: center;
+    line-height: 50px;
+}
+.tt>a:hover{
+    background-color: #00C4C4;
+    color:white;
+}
+
+
+
+
+
+.xiaRight .bb{
+    margin-top: 30px;
+    border:solid 1px  #BCBCBC;
+}
+
+.xiaRight .bb img{
+    width: 60px;
+    height: 60px;
+}
+.bb>div:first-child{
+    padding: 15px;
+    border-bottom:solid 1px  #BCBCBC;
+}
+.bb>div:nth-child(2){
+   height:340px;
+}
+.bb>div:first-child,.bb>div:first-child span{
+    border-bottom: solid 1px #BCBCBC;
+    padding:10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.floatLeft{
+    float: left;
+    margin-left:18px;
+    margin-top:18px;
+}
+.floatLeft span{
+    display: block;
+    text-align: center;
+}
+/* 下面右边部分结束 */

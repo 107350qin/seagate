@@ -1,0 +1,324 @@
+/* 轮播的css开始 */
+.box {
+	width:325px;
+	height:350px;
+	margin:0px auto;
+	position:relative;
+    border:1px solid #ccc;
+}
+.mainTop .box a {
+	display:none;
+	width:500px;
+	height:400px;
+	color:#fff;
+	text-align:center;
+	font:700 100px/400px "simsun";
+}
+.mainTop ul {
+	position:absolute;
+	bottom:30px;
+	left:50%;
+	list-style:none;
+	margin-left:-55px;
+}
+.mainTop li {
+	float:left;
+	width:18px;
+	height:18px;
+	background-color:black;
+	margin:0 2px;
+	cursor:move;
+	border-radius:9px;
+	color:#fff;
+	text-align:center;
+	line-height:18px;
+}
+.mainTop .arrow span {
+	position:absolute;
+	top:50%;
+	width:38px;
+	height:60px;
+	color:#fff;
+	text-decoration:none;
+	font:700 36px/60px "simsun";
+	text-align:center;
+	background:rgba(0,0,0,.3);
+	margin-top:-30px;
+	cursor:pointer;
+}
+#arrow-l {
+	left:0;
+}
+#arrow-r {
+	right:0;
+}
+.arrow span:hover {
+	background:rgba(0,0,0,.8);
+}
+.current {
+	background-color:red;
+}
+.show {
+	display:block;
+}
+
+/* 轮播的css结束 */
+
+
+
+
+
+
+
+
+
+
+.main{
+    width:83%;
+    margin: 0 auto;
+    margin-top:15px;
+    margin-bottom:70px;
+}
+.main div{
+   overflow: hidden;
+}
+.mainTop .a{
+	float: left;
+    width:25%;
+    height: 353px;
+}
+.mainTop .b{
+	float: left;
+    width:47%;
+    height: 351px;
+	margin-left:15px;
+	border: solid 1px #CCCCCC;
+}
+.mainTop .c{
+	position: relative;
+    width:25%;
+    height: 353px;
+    border:solid 1px #CCCCCC;
+	float: right;
+}
+
+.b p a{
+	display: block;
+font-size: 14px;
+margin-left: 17px;
+margin-top: 12px;
+height: 22px;
+overflow: hidden;
+}
+.b p a:hover{
+	color:#00C4C4;
+}
+
+.b p .bolder{
+	color:#008C99;
+	font-size: 16px;
+	font-weight: 610;
+}
+.c .one{
+	position: absolute;
+	font-size: 16px;
+font-weight: bold;
+left: 35px;
+top:15px;
+}
+.c .two{font-size: 14px;
+	position: absolute;
+left: 220px;
+top:15px;
+font-size: 14px;
+}
+.c .three{font-size: 14px;
+	position: absolute;
+left: 35px;
+top:50px;
+width:90px;
+height: 90px;
+}
+.c .four{font-size: 14px;
+	position: absolute;
+left: 150px;
+top:50px;
+}
+.c .five{font-size: 14px;
+	position: absolute;
+left: 230px;
+top:50px;
+}
+.c .six{font-size: 14px;
+	position: absolute;
+left: 150px;
+top:86px;
+}
+.c .seven{font-size: 14px;
+	position: absolute;
+left: 230px;
+top:86px;
+}
+.c .eight{font-size: 14px;
+	position: absolute;
+left: 150px;
+top:122px;
+}
+.c .nine{font-size: 14px;
+	position: absolute;
+left: 70px;
+top:155px;
+}
+.c .ten{
+	font-size: 14px;
+	position: absolute;
+left: 150px;
+top:155px;
+}
+.c div{
+	margin-top:200px;
+}
+.c div a{
+	display: block;
+	background-color:#008C99;
+	width:110px;
+	height: 36px;
+	line-height: 36px;
+	text-align: center;
+	border-radius: 5px;
+	float: left;
+	margin-left: 36px;
+	margin-bottom:15px;
+	color: white;
+	font-size: 14px;
+}
+.c div a:hover{
+	background-color: #00C4C4;
+}
+.linkTo{
+	display: block;
+	width:100%;
+	height: 45px;
+	background-color: #CCCCCC;
+	margin-top:6px;
+	line-height: 45px;
+	text-align: center;
+}
+.linkTo:hover{
+	color: white;
+	background-color: rgb(145, 131, 131);
+}
+.mainFloor{
+	margin-top: 15px;
+}
+.i p{
+	height: 22px;
+	overflow: hidden;
+}
+.i{
+	width:49.8%;
+	height: 230px;
+	float: left;
+	border:solid 1px #CCCCCC;
+}
+.i:first-child{
+	float: left;
+}
+.i:last-child{
+}
+
+.i p{
+	padding: 5px 20px;
+}
+.i p span{
+	float: right;
+	color: #646060;
+}
+.i p:first-child span{
+	float: left;
+	font-size: 16px;
+	font-weight: 600;
+	color: black;
+}
+.i p:first-child a{
+	float: right;
+}
+.i p:first-child{
+	margin-top: 10px;
+}
+.i p:nth-of-type(2){
+	margin-top: -15px;
+}
+.i p a,.i p span{
+	font-size: 14px;
+}
+.i a:hover{
+color:#00C4C4;
+}
+
+
+
+/* 轮播开始 */
+#lunbobox {
+	width:360px;
+	height:352px;
+	position:relative;
+}
+.lunbo {
+	width:500px;
+	height:352px;
+}
+.lunbo img {
+	width:360px;
+	height:352px;
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+#lunbobox ul {
+	width:285px;
+	position:absolute;
+	bottom:10px;
+	right:0px;
+	z-index:5;
+}
+#lunbobox ul li {
+	cursor:pointer;
+	width:10px;
+	height:4px;
+	border:1px solid #cccccc;
+	float:left;
+	list-style:none;
+	background:#cccccc;
+	text-align:center;
+	margin:0px 5px 0px 0px;
+}
+#toleft {
+	width:30px;
+	height:100px;
+	font-size:40px;
+	line-height:100px;
+	text-align:center;
+	background:#cccccc;
+    position:absolute;
+	top:120px;
+	left:0px;
+	cursor:pointer;
+	z-index:99;
+	opacity:0.4;
+}
+#toright {
+	width:30px;
+	height:100px;
+	font-size:40px;
+	line-height:100px;
+	text-align:center;
+	background:#cccccc;
+    position:absolute;
+	top:120px;
+	left:300px;
+	cursor:pointer;
+	z-index:99;
+	opacity:0.4;
+}
+/* 轮播结束 */

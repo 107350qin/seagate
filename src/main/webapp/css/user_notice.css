@@ -1,0 +1,76 @@
+.all{
+    margin: 0 auto;
+    width:83%;
+    height:500px;
+    margin-top: 15px;
+    margin-bottom:100px;
+}
+.all .left{
+    float: left;
+    width:15%;
+    height:100%;
+    background-color: rgb(235, 218, 218);
+}
+.all .right{
+    float: left;
+    width:85%;
+    height:100%;
+}
+.all .left a{
+    font-size: 18px;
+    display: block;
+width:100%;
+height: 50px;
+line-height: 50px;
+text-align: center;
+border-bottom: solid 1px rgb(250, 249, 249);
+}
+.all .left a:hover{
+    background-color: rgb(210, 248, 235);
+    color: crimson;
+}
+table{
+    margin-left: 15px;
+    border:solid 1px #E4E4E4;
+}
+tr{
+    height:45px;
+}
+tr td:first-child,tr th:first-child{
+text-indent: 15px;
+}
+tr:nth-child(odd){
+    background-color: rgb(215, 223, 245);
+}
+tr:nth-child(even){
+    background-color: rgb(226, 245, 237);
+}
+td a{
+line-height: 45px;
+height: 45px;
+padding:15px 0px;;
+}
+td a:hover{
+    color:#019875;}
+.page a{
+    display: block;
+    float: left;
+    width:25px;
+    border: solid 1px #CCDBE4;
+    color: black;
+    margin-left: 10px;
+    text-align: center;
+}
+.page a:first-child,.page a:last-child{
+    width:60px;
+}
+.page a:hover{
+    background-color: rgb(128, 128, 175);
+    color: white;
+}
+.page{
+    display: block;
+    width:54%;
+    margin:0 auto;
+    margin-top: 30px;
+}

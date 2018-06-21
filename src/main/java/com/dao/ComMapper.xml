@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.IComDao">
+<insert id="insertcom_companyRegistration" parameterType="Com">
+	insert into com values(null,md5(#{com_password}),#{com_name},#{com_agencyClass},#{com_agencyRank},
+	#{com_parent},#{com_address},#{com_addressDetail},#{com_zcode},#{com_born},#{com_userCount},#{com_regMoney},
+	#{com_branchCount},#{com_property},#{com_pica},#{com_picb},#{com_desc},#{com_legalUsername},#{com_legalPhone},#{com_legalEmail},#{com_legalQQ},#{com_legalWechat},
+	#{com_legalWNickname},#{com_managerName},#{com_managerPhone},#{com_managerEmail},#{com_managerQQ},#{com_managerWechat},#{com_managerWNickname},
+	#{com_webUsername},#{com_webJob},#{com_webPhone},#{com_webPhoneG},#{com_webEmail},#{com_webQQ},#{com_webWechat},#{com_webWNickname},#{com_webContactBoo},
+	#{com_customerTrade},#{com_subTrade})
+</insert>
+	<select id="selectcom_login" parameterType="Com" resultType="Com">
+	select  * from com where com_name=#{com_name} and com_password=md5(#{com_password})
+	</select>
+	
+	<select id="selectCourseByName" resultType="Course">
+	select  * from course where c_name=#{0}
+	</select>
+	
+	<select id="selectChapterByTile" resultType="Chapter">
+	select  * from chapter where ch_title=#{0}
+	</select>
+	
+	
+	<insert id="insertCourse" parameterType="Course">
+	insert into course(c_name,c_class,c_time,c_desc,c_pic,com_id) value (#{0},#{1},#{2},#{3},#{4},#{5})
+	</insert>
+	<insert id="insertChapter">
+	insert into chapter(ch_title,c_id) value (#{0},#{1})
+	</insert>
+	<insert id="insertSection">
+	insert into section(section_title,section_long,section_link,ch_id) value (#{0},#{1},#{2},#{3})
+	</insert>
+
+
+	<!-- 通过公司ID查询所有的课程 -->
+	<select id="pickCoursesByComId" resultType="Course">
+		select * from course where com_id=#{0}
+	</select>
+	
+	<!-- 通过课程ID查询章节 -->
+	<select id="pickChapterListById" resultMap="myChapter">
+		select * from chapter where c_id=#{0}
+	</select>
+	<resultMap type="Chapter" id="myChapter">
+	<id column="ch_id" property="ch_id"/>
+		<collection property="list" ofType="Section" column="ch_id"  select="pickSectionByCId"/>
+	</resultMap>
+	<select id="pickSectionByCId" resultType="Section">
+		select * from Section where ch_id=#{ch_id};
+	</select>
+	
+	
+	
+	<select id="checkComNameExit" resultType="int">
+		select count(*) from com where com_name=#{0};
+	</select>
+	
+	
+	<!-- 重置密码 -->
+	<update id="updatePassword">
+		update com set com_password=md5(#{1}) where com_name=#{0};
+	</update>
+	
+	
+	<select id="pickCourseById" resultType="course">
+		select * from course where  c_id=#{0}
+	</select>
+	
+	<select id="pickSectionById" resultType="Section">
+		select * from section where section_id=#{0};
+	</select>
+	
+	<select id="pickChapterBySectionId" resultType="Chapter">
+		select chapter.* from chapter left join section on chapter.ch_id=section.ch_id where section_id=#{0}
+	</select>
+	
+	
+	<!-- 删除课程 -->
+	<delete id="delUserSection">
+		delete from usersection where section_id=#{0}
+	</delete>
+	<delete id="delSection">
+		delete from section where ch_id=#{0}
+	</delete>
+	<delete id="delChapter">
+		delete from chapter where c_id=#{0}
+	</delete>
+	<delete id="delColl">
+		delete from coll where c_id=#{0}
+	</delete>
+	<delete id="delComm">
+		delete from comm where c_id=#{0}
+	</delete>
+	<delete id="delStudy">
+		delete from study where c_id=#{0}
+	</delete>
+	<delete id="delCourse">
+		delete from course where c_id=#{0}
+	</delete>
+</mapper>
+

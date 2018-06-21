@@ -1,0 +1,181 @@
+#Lower{
+    width: 1100px;
+    margin-top: 132px;
+    height: 980px ;
+    margin-left: 100px;
+    margin-right: 100px;
+    position: relative;
+
+}
+#attribute{
+    height: 980px;
+    width: 638px;
+    float: left;
+    border: 0px solid #4a4a4a;
+    position: relative;
+}
+#Explain{
+    position: relative;
+    margin-left: 82px;
+    width: 340px;
+    height: 190px;
+    float: right;
+    border: 0px solid #4a4a4a;
+    padding-left: 10px;
+}
+#typefacezhuce{
+    width: 638px;
+    height:90px;
+}
+.Typeface{
+    margin-top: 23px;
+    font-size: 17px;
+    float: left;
+    margin-left: 12px;
+    margin-right: 40px;
+}
+#circular{
+    margin-right: 38px;
+    margin-left: 38px;
+    width: 562px;
+    height: 40px;
+
+    position: relative;
+}
+.imgu228{
+    float: left;
+}
+
+.imgu231{
+    float: left;
+}
+.imgu233{
+    float: left;
+    margin-right: -14px;
+    margin-left: -2px;
+    margin-top: 5px;
+}
+.number{
+    position: absolute;
+    color: #FFFFFF;
+    margin-top: -32px;
+    margin-left: 15px;
+}
+.process{
+    text-align: center;
+    width: 114px;
+    height: 20px;
+    font-size: 15px;
+    float: left;
+    margin-left: -36px;
+    position: absolute;
+
+}
+.note{
+    font-size: 13px;
+    float: left;
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+#notea{
+    font-weight: 600;
+}
+#information{
+    margin-top:50px;
+    width: 638px;
+    height:810px;
+    float: left;
+}
+.inforCorporate{
+    height:40px;
+    width: 638px;
+    margin-bottom: 15px;
+}
+.dateCorporate{
+    width: 120px;
+    height:30px;
+    color: black;
+    position: absolute;
+    text-align: right;
+    margin-top: 9px;
+    font-size: 15px;
+}
+.inforname{
+    width: 120px;
+    height: 36px;
+    float: left;
+    position: relative;
+    margin-right: 9px;
+    margin-left: 10px;
+}
+.Corporatesan{
+    position: relative;
+    height:36px;
+    width: 226px;
+    float: left;
+}
+.Corporatename{
+    position: absolute;
+    height:36px;
+    width: 225px;
+
+}
+#button2{
+    width: 200px;
+    height: 46px;
+    margin-left:150px;
+    position: absolute;
+    margin-top: 15px;
+    color: #FFFFFF;
+    background-color: #099998;
+    font-size: 15px;
+    border: 0px solid #FFFFFF;
+    border-radius:8px;
+}
+
+.fill{
+    width:300px;
+    height:36px;
+    color: darkgray;
+    position: absolute;
+    margin-left: 380px;
+    margin-top: 2px;
+    font-size: 14px;
+}
+#xian2{
+    width:638px;
+    height: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 0.5px dashed  #CCCCCC;
+
+
+}
+.error{
+    width:260px;
+    height:36px;
+    color: darkgray;
+    position: absolute;
+    margin-left: 240px;
+    margin-top: 20px;
+    font-size: 10px;
+    color: #D53A3E;
+}
+#fill1{
+    display: none;
+}
+#fill2{
+    display: none;
+}
+#fill3{
+    display: none;
+}
+#fill4{
+    display: none;
+}
+#fill5{
+    display: none;
+}
+#fill6{
+    display: none;
+}

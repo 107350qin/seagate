@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.IUserDao">
+	<select id="pickNoticeAndInfo" resultType="Event">
+		select event_id,event_title from event where event_boo=1 or event_boo=2 order by event_time  limit #{0};
+	</select>
+	<select id="pickMarketAndActivity" resultType="Event">
+		select event_id,event_title,event_time from event where event_boo=3 or event_boo=4 order by event_time  limit #{0};
+	</select>
+	<select id="pickCourse" resultType="Course">
+		select * from course where c_boo=1
+		<if test="c_class!=0 and c_class!=4">
+			 and c_class=#{c_class}  
+		</if>
+		<if test="c_class!=4">
+			 order by c_time desc
+		</if>
+		limit #{0}, #{1}
+	</select>
+	
+	
+	
+	
+	
+	<!-- 1.学习 2.评论  3.收藏 -->
+		<!-- 查询关于这个课程的评论有哪些 -->
+		<select id="pickCourseCommByCid" resultMap="myComm">
+			select user.*,comm_id,comm_content,comm_time,comm_score from comm  left join user  on comm.u_id=user.u_id left JOIN course on comm.c_id=course.c_id where course.c_boo=1  and course.c_id=#{0} 
+			<if test="_parameter!=0 and _parameter!=4">
+			 and c_class=#{_parameter} 
+			</if> 
+			 order by c_time desc
+		</select>
+			<resultMap type="Comm" id="myComm">
+				<association property="user" javaType="User" select="selectUserByCommId" column="comm_id"></association> 
+			</resultMap>
+				<select id="selectUserByCommId" resultType="User">
+					select user.* from user left join comm on user.u_id=comm.u_id left JOIN course on comm.c_id=course.c_id where c_boo=1  and comm_id=#{comm_id};
+				</select>
+		
+		<!-- 查询学习过1号课程的人有哪些 -->
+		<select id="pickCourseStudyByCid" resultType="User">
+			select user.* from user left join study on user.u_id=study.u_id left join course on course.c_id=study.c_id where  course.c_boo=1 and course.c_id=#{0} 
+			<if test="_parameter!=0 and _parameter!=4">
+			 and c_class=#{_parameter} 
+			</if>
+			<if test="_parameter!=4">
+			 order by c_time
+			</if>
+		</select>
+	
+	
+	<select id="pickCourseCountOfClass" resultType="int" parameterType="int">
+		select count(*) from course where c_boo=1
+		<if test="_parameter!=0 and _parameter!=4">
+		 and c_class=#{_parameter}
+		</if>
+		<if test="_parameter!=4">
+		 order by c_time
+		</if>
+	</select>
+	
+	
+	
+	
+	<!-- 进入学习的查询 -->
+	<select id="pickCourseById" resultType="Course">
+		select * from course where c_boo=1 and c_id=#{0}
+	</select>
+	
+	<select id="pickChapterListById" resultMap="myChapter">
+		select * from chapter where c_id=#{0}
+	</select>
+	<resultMap type="Chapter" id="myChapter">
+	<id column="ch_id" property="ch_id"/>
+		<collection property="list" ofType="Section" column="ch_id"  select="pickSectionByCId"/>
+	</resultMap>
+	<select id="pickSectionByCId" resultType="Section">
+		select * from Section where ch_id=#{ch_id};
+	</select>
+	
+	
+	
+	<!-- 查询学过该课程的其他人的ID -->
+	<select id="pickUidByCid" resultType="int">
+		select u_id from study where c_id=#{0};
+	</select>
+	<select id="pickCidByUid" resultType="int">
+		select c_id from study where u_id=#{0};
+	</select>
+	
+	<!-- 查询section -->
+	<select id="pickSectionById" resultType="Section">
+		select * from section where section_id=#{0};
+	</select>
+	
+	<select id="insertComm">
+		insert comm values(0,#{0},#{1},#{2},#{3},#{4})
+	</select>
+	
+	
+	
+	
+	<select id="pickChapterBySectionId" resultType="Chapter">
+		select chapter.* from chapter left join section on chapter.ch_id=section.ch_id where section_id=#{0}
+	</select>
+	
+	<insert id="insertSeen">
+		insert usersection values(0,#{0},#{1},#{2});
+	</insert>
+	
+	<select id="pickSeenCount" resultType="int">
+		select count(*) from usersection where u_id=#{0} and section_id=#{1}
+	</select>
+	
+	<update id="updateSeen">
+		update usersection set seenTime=#{2} where u_id=#{0} and section_id=#{1}
+	</update>
+	
+	<select id="pickSeenTime" resultType="String">
+		select seenTime from usersection where u_id=#{0} and section_id=#{1}
+	</select>
+	
+	<!-- 登陆 -->
+	<insert id="insertLoginer">
+		insert user(u_phone,u_password,u_email,u_name,u_company,u_position,u_address) values(#{u_phone},#{u_password},#{u_email},#{u_name},#{u_company},#{u_position},#{u_address});
+	</insert>
+	<!-- 注册 -->
+	<select id="selectLoginer" resultType="User">
+		select * from user where u_password=#{1} and (u_phone=#{0} or u_email=#{0});
+	</select>
+	
+	
+	<!-- 验证输入的邮箱是否存在 -->
+	<select id="pickUserByEmail" resultType="User">
+		select * from user where u_email=#{0};
+	</select>
+	<!-- 验证输入的电话是否存在 -->
+	<select id="pickUserByPhone" resultType="User">
+		select * from user where u_phone=#{0};
+	</select>
+	
+	<!-- 修改头像 -->
+	<update id="updatePhoto">
+		update user set u_photo=#{u_photo} where u_id=#{u_id};
+	</update>
+	<!-- 修改密码 -->
+	<update id="updatePassword">
+		update user set u_password=#{1} where u_id=#{2} and u_password=#{0};
+	</update>
+	
+	<!-- 查询收藏过的课程有哪些 -->
+	<select id="pickCollCoursesByUid" resultType="Course">
+		select course.* from course left join coll on course.c_id=coll.c_id where coll.u_id=#{u_id};
+	</select>
+	<!-- 查询学习过的课程有哪些 -->
+	<select id="pickStudyCoursesByUid" resultType="Course">
+		select course.* from course left join study on course.c_id=study.c_id where study.u_id=#{u_id};
+	</select>
+	
+	
+	<!-- 查询event -->
+	<select id="pickEventById" resultType="Event">
+		select * from event where event_id=#{0} 
+	</select>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- 用户查询课程 -->
+	<resultMap type="Course" id="theCourse">
+		<id column="c_id" property="c_id"/>
+		<association  property="com" javaType="Com" select="selectComByCid" column="c_id"></association>
+		<collection property="chapterList" ofType="Chapter" column="c_id"  select="pickChapterByCid"/>
+	</resultMap>
+	<select id="selectComByCid" resultType="Com">
+		select com.* from com left join course on com.com_id=course.com_id where course.c_id=#{c_id};
+	</select>
+	<select id="pickChapterByCid" resultMap="theChapter">
+		select chapter.* from chapter left join course on chapter.c_id=course.c_id where course.c_id=#{c_id};
+	</select>
+	<resultMap type="Chapter" id="theChapter">
+		<id column="ch_id" property="ch_id"/>
+		<collection property="list" ofType="Section" column="ch_id"  select="pickSectionByChid"/>
+	</resultMap>
+	<select id="pickSectionByChid" resultType="Section">
+		select section.* from section left join chapter on chapter.ch_id=section.ch_id where chapter.ch_id=#{ch_id};
+	</select>
+	<!-- 查询Course -->
+	<select id="selectCourses" resultMap="theCourse">
+		select * from course where c_boo=1 and c_name like "%"#{2}"%" limit #{0},#{1}
+	</select>
+	
+</mapper>
